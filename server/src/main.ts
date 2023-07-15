@@ -1,3 +1,9 @@
+if (!process.env.IS_TS_NODE) {
+  require('module-alias/register');
+  console.log('>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<,');
+  console.log(process.env.IS_TS_NODE);
+}
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
