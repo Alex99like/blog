@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/createUser.dto';
 import { UserEntity } from './entities/user.entity';
 import { Repository } from 'typeorm';
@@ -15,9 +15,23 @@ export class UserService {
   ) {}
 
   async createUser(createUserDto: CreateUserDto): Promise<UserEntity> {
+    const userByEmail = await this.userRepository.findOne({
+      where: { email: createUserDto.email },
+    });
+
+    const userByUsername = await this.userRepository.findOne({
+      where: { username: createUserDto.username },
+    });
+
+    if (userByEmail || userByUsername) {
+      throw new HttpException(
+        'Email or username are token',
+        HttpStatus.UNPROCESSABLE_ENTITY,
+      );
+    }
+
     const newUser = new UserEntity();
     Object.assign(newUser, createUserDto);
-
     return await this.userRepository.save(newUser);
   }
 
