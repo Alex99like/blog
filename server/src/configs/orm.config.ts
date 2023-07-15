@@ -1,3 +1,4 @@
+import { TagEntity } from '@app/tag/entities/tag.entity';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
@@ -10,4 +11,6 @@ export const getOrmConfig = (
   username: configService.get('DB_USERNAME'),
   password: configService.get('DB_PASSWORD'),
   database: configService.get('DB_NAME'),
+  entities: [TagEntity],
+  synchronize: true,
 });
