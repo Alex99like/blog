@@ -32,4 +32,17 @@ export class ProfileController {
     );
     return this.profileService.buildProfileResponse(profile);
   }
+
+  @Post(':username/follow')
+  @UseGuards(AuthGuard)
+  async unFollowProfile(
+    @User('id') currentUserId: number,
+    @Param('username') profileUsername: string,
+  ): Promise<ProfileResponseInterface> {
+    const profile = await this.profileService.unFollowProfile(
+      currentUserId,
+      profileUsername,
+    );
+    return this.profileService.buildProfileResponse(profile);
+  }
 }
