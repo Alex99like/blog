@@ -1,4 +1,5 @@
 import { ArticleEntity } from '@app/article/entities/article.entity';
+import { FollowEntity } from '@app/profile/entities/follow.entity';
 import { TagEntity } from '@app/tag/entities/tag.entity';
 import { UserEntity } from '@app/user/entities/user.entity';
 import { ConfigService } from '@nestjs/config';
@@ -13,7 +14,7 @@ export const getOrmConfig = (
   username: configService.get('DB_USERNAME'),
   password: configService.get('DB_PASSWORD'),
   database: configService.get('DB_NAME'),
-  entities: [TagEntity, UserEntity, ArticleEntity],
+  entities: [TagEntity, UserEntity, ArticleEntity, FollowEntity],
   synchronize: true,
   //migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
 });
