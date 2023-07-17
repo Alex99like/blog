@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="container">
+    <h1 class="title">Sign Up</h1>
+    <a [routerLink]="['/login']">Have an account?</a>
+    <div class="errors">
+
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          placeholder="Username"
+          formControlName="username"
+        />
+      </fieldset>
+      <fieldset>
+        <input
+          type="email"
+          class="form-control form-control-lg"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </fieldset>
+      <fieldset>
+        <input
+          type="password"
+          class="form-control form-control-lg"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </fieldset>
+      <button
+        class="btn btn-lg btn-primary pull-xs-right"
+        type="submit"
+      >
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>
