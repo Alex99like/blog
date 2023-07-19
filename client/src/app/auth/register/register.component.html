@@ -3,7 +3,10 @@
     <h1 class="title">Sign Up</h1>
     <a [routerLink]="['/login']">Have an account?</a>
     <div class="errors">
-
+      <mc-backend-error-messages
+        *ngIf="backendErrors$ | async as error"
+        [backendErrors]="error"
+      ></mc-backend-error-messages>
     </div>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <fieldset>
@@ -33,6 +36,7 @@
       <button
         class="btn btn-lg btn-primary pull-xs-right"
         type="submit"
+        [disabled]="isSubmitting$ | async"
       >
         Sign Up
       </button>
