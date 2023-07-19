@@ -21,6 +21,7 @@ export class UserService {
     const errorResponse = {
       errors: {},
     };
+    console.log(createUserDto);
     const userByEmail = await this.userRepository.findOne({
       where: { email: createUserDto.email },
     });

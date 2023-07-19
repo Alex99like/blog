@@ -6,6 +6,7 @@ import {
   Put,
   UseGuards,
   UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/createUser.dto';
@@ -15,7 +16,7 @@ import { User } from './decorators/user.decorator';
 import { UserEntity } from './entities/user.entity';
 import { AuthGuard } from './guards/auth.guard';
 import { UpdateUserDto } from './dto/updateUser.dto';
-import { BackendValidationPipe } from '@app/shared/backendValidation.pipe';
+import { BackendValidationPipe } from '../shared/backendValidation.pipe';
 
 @Controller()
 export class UserController {
