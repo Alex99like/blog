@@ -21,9 +21,27 @@ header {
     gap: 15px;
 
     a {
-      font-family: 'Tektur';
+
+
       text-decoration: none;
-      font-size: 20px;
+      font-size: 22px;
+      color: #003262;
+      padding: 2px 5px 3px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #d3d3d3;
+      gap: 3px;
+      border-bottom: 2px solid #d3d3d3;
+
+      span {
+        font-family: 'Tektur';
+      }
+
+      &:active {
+        border-bottom: 1px solid #d3d3d3;
+        transform: translateY(1px);
+      }
     }
   }
 

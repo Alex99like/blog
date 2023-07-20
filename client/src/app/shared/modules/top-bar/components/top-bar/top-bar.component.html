@@ -8,19 +8,19 @@
     </div>
     <div class="container">
       <a [routerLink]="['/']">
-        HOME
+        <span>HOME</span>
         <i class="heart"></i>
       </a>
 
       <ng-container *ngIf="(isLoggedIn$ | async)">
         <a [routerLink]="['/articles/new']">
           <ion-icon name="newspaper-outline"></ion-icon>
-          NEW POST
+          <span>NEW POST</span>
         </a>
         <a [routerLink]="['/setting']">
           <i class="ion-gear-a"></i>
           <ion-icon name="settings-outline"></ion-icon>
-          SETTINGS
+          <span>SETTINGS</span>
         </a>
         <a [routerLink]="['/profiles', (currentUser$ | async)?.username]">
           <img src="" alt="" [src]="(currentUser$ | async)?.image">
