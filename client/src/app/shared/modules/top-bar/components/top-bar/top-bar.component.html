@@ -1,0 +1,45 @@
+<header>
+  <nav>
+    <div>
+      <a [routerLink]="['/']" class="logo">
+        <img src="../../../../../../assets/img/blog.png" alt="">
+        <span>BLOG IT</span>
+      </a>
+    </div>
+    <div class="container">
+      <a [routerLink]="['/']">
+        HOME
+        <i class="heart"></i>
+      </a>
+
+      <ng-container *ngIf="(isLoggedIn$ | async)">
+        <a [routerLink]="['/articles/new']">
+          <ion-icon name="newspaper-outline"></ion-icon>
+          NEW POST
+        </a>
+        <a [routerLink]="['/setting']">
+          <i class="ion-gear-a"></i>
+          <ion-icon name="settings-outline"></ion-icon>
+          SETTINGS
+        </a>
+        <a [routerLink]="['/profiles', (currentUser$ | async)?.username]">
+          <img src="" alt="" [src]="(currentUser$ | async)?.image">
+          {{(currentUser$ | async)?.username}}
+        </a>
+      </ng-container>
+
+      <ng-container *ngIf="isAnonymous$ | async">
+        <a [routerLink]="['/login']">
+          <ion-icon name="newspaper-outline"></ion-icon>
+          SIGN IN
+        </a>
+        <a [routerLink]="['/register']">
+          <i class="ion-gear-a"></i>
+          <ion-icon name="settings-outline"></ion-icon>
+          SIGN IN
+        </a>
+      </ng-container>
+    </div>
+  </nav>
+</header>
+

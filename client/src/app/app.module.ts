@@ -2,13 +2,17 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StoreModule } from '@ngrx/store';
+import { IonicModule } from '@ionic/angular'
 
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
 import { AuthModule } from 'src/app/auth/auth.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
+import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
+import { PersistanceService } from './shared/services/persistance.service';
+import { AuthInterceptor } from './shared/services/auth.interceptor.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,8 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    TopBarModule,
+    IonicModule.forRoot(),
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
@@ -31,7 +37,14 @@ import { EffectsModule } from '@ngrx/effects';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [
+    PersistanceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

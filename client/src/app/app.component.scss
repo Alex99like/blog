@@ -1,9 +1,12 @@
 .wrapper {
-  min-height: calc(100vh - 50px);
+  min-height: 100vh;
+  padding-top: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: linear-gradient(139deg, rgba(255,9,245,0.364670868347339) 0%, rgba(92,27,255,0.375875350140056) 15%, rgba(255,255,255,0.9024859943977591) 39%, rgba(255,255,255,1) 70%, rgba(25,10,255,0.2582282913165266) 88%, rgba(243,0,246,0.29184173669467783) 100%);
+  background: linear-gradient(149deg, rgba(253, 34, 224, 0.293) 0%, rgba(85, 0, 243, 0.241) 27%, rgba(255,255,255,1) 54%, rgba(255,255,255,1) 72%, rgba(138,11,240,0.36747198879551823) 100%);
+
+
 }
 
