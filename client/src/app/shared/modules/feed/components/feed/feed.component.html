@@ -1,1 +1,32 @@
-This is our sharable feed
+<mc-loading *ngIf="isLoading$ | async"></mc-loading>
+
+<mc-error-message *ngIf="error$ | async" [message]="'Foo'"></mc-error-message>
+
+<div class="container" *ngIf="(feed$ | async) as feeds">
+  <div class="article" *ngFor="let article of feeds?.articles">
+    <div class="meta">
+      <a class="avatar" [routerLink]="['/profiles', article.author.username]">
+        <img [src]="article.author.image" alt="">
+        <span>{{article.author.username}}</span>
+      </a>
+      <span>{{ article.createAt | date: 'MMMM d, y, h:mm:ss a' }}</span>
+    </div>
+    <!-- <div>
+      ADD TO FAVORITES
+    </div> -->
+    <div>
+      <a class="title" [routerLink]="['/articles', article.slug]">
+        {{ article.title }}
+      </a>
+    </div>
+    <p>{{ article.description }}</p>
+    TAG LIST
+  </div>
+
+  <mc-pagination
+    [total]="(feed$ | async)!.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></mc-pagination>
+</div>
