@@ -16,6 +16,8 @@ import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './shared/services/auth.interceptor.service';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
+import { YourFeedModule } from './your-feed/your-feed.module';
+import { TagFeedModule } from './tag-feed/tag-feed.module';
 
 
 @NgModule({
@@ -27,8 +29,10 @@ import { GlobalFeedModule } from './global-feed/global-feed.module';
     AppRoutingModule,
     AuthModule,
     GlobalFeedModule,
+    YourFeedModule,
     HttpClientModule,
     TopBarModule,
+    TagFeedModule,
     IonicModule.forRoot(),
     StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),

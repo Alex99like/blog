@@ -7,14 +7,14 @@
     </li>
 
     <li>
-      <a [routerLink]="['/']" routerLinkActive="active">
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         GLOBAL FEED
       </a>
     </li>
 
     <li *ngIf="tagNameProps">
       <a [routerLink]="['/tags', tagNameProps]" routerLinkActive="active">
-        {{ tagNameProps }}
+       #{{ tagNameProps }}
       </a>
     </li>
   </ul>
