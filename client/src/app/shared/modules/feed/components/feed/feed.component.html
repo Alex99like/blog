@@ -9,7 +9,7 @@
         <img [src]="article.author.image" alt="">
         <span>{{article.author.username}}</span>
       </a>
-      <span>{{ article.createAt | date: 'MMMM d, y, h:mm:ss a' }}</span>
+      <span class="date">{{ article.createAt | date: 'MMMM d, y, h:mm:ss a' }}</span>
     </div>
     <!-- <div>
       ADD TO FAVORITES

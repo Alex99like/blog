@@ -4,7 +4,7 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  background-color: #ffffffc7;
+  background-color: #101010c7;
   //box-shadow: 0 0 0px 2px #bfbfbf9b;
 
   nav {
@@ -25,21 +25,21 @@ header {
 
       text-decoration: none;
       font-size: 22px;
-      color: #003262;
+      color: #f6f6f6;
       padding: 2px 5px 3px;
       border-radius: 5px;
       display: flex;
       align-items: center;
-      border: 1px solid #d3d3d3;
+      border: 1px solid #2c2b65;
       gap: 3px;
-      border-bottom: 2px solid #d3d3d3;
+      border-bottom: 2px solid #2c2b65;
 
       span {
         font-family: 'Tektur';
       }
 
       &:active {
-        border-bottom: 1px solid #d3d3d3;
+        border-bottom: 1px solid #2c2b65;
         transform: translateY(1px);
       }
     }
@@ -54,7 +54,7 @@ header {
       font-family: 'Tektur';
 
       font-size: 30px;
-      color: #003262;
+      color: #f1f1f1;
     }
 
     img {

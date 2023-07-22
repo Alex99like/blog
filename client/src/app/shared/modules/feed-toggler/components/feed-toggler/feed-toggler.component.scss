@@ -1,0 +1,25 @@
+.wrapper {
+  margin-bottom: 20px;
+  ul {
+    display: flex;
+    gap: 20px;
+
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        font-size: 24px;
+        font-family: 'Tektur';
+        padding: 3px 10px;
+        border-radius: 5px;
+        color: #7a0eff;
+
+        &.active {
+          background: #101010;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

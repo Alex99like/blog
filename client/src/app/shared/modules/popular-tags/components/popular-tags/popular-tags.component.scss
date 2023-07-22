@@ -1,11 +1,12 @@
 .wrapper {
-  background-color: aliceblue;
+  background-color: #191919;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 1px 2px 0px #21212168;
 
   h3 {
     font-size: 30px;
+    color: #9861ff;
     font-family: 'Tektur';
   }
 
@@ -13,12 +14,16 @@
     display: flex;
     gap: 10px;
     justify-content: start;
+    margin-top: 20px;
+    flex-wrap: wrap;
 
     a {
-      border: 1px solid black;
+      border: 1px solid #5800ef;
       padding: 2px 5px;
       border-radius: 10px;
+      background-color: #9861ff;
       text-decoration: none;
+      color: #ffffff;
     }
   }
 }
