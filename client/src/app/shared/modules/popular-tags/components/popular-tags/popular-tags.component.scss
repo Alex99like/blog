@@ -1,0 +1,24 @@
+.wrapper {
+  background-color: aliceblue;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px 0px #21212168;
+
+  h3 {
+    font-size: 30px;
+    font-family: 'Tektur';
+  }
+
+  .tags {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+
+    a {
+      border: 1px solid black;
+      padding: 2px 5px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+  }
+}
